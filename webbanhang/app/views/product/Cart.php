@@ -5,12 +5,10 @@
 <div class="container mt-4">
     <!-- Banner -->
     <div class="jumbotron text-center bg-warning text-white py-3 rounded">
-        <h1><i class="fas fa-shopping-cart"></i> Giỏ hàng</h1>
+        <h1><i class="fas fa-shopping-cart"></i> Giỏ hàng </h1>
     </div>
 
     <?php
-    
-
     // Xử lý cập nhật số lượng
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['action']) && isset($_POST['product_id'])) {
@@ -64,7 +62,7 @@
                             <input type="hidden" name="product_id" value="<?php echo $id; ?>">
                             <button type="submit" name="action" value="decrease" class="btn btn-outline-secondary btn-sm">
                                 <i class="fas fa-minus"></i>
-</button>
+                            </button>
                             <span class="mx-2"><?php echo htmlspecialchars($item['quantity'], ENT_QUOTES, 'UTF-8'); ?></span>
                             <button type="submit" name="action" value="increase" class="btn btn-outline-secondary btn-sm">
                                 <i class="fas fa-plus"></i>
@@ -101,7 +99,7 @@
     <?php endif; ?>
 
     <!-- Nút điều hướng -->
-    <div class="mt-3">
+    <div class="mt-3 d-flex justify-content-between">
         <a href="/Product" class="btn btn-primary">
             <i class="fas fa-arrow-left"></i> Tiếp tục mua sắm
         </a>
@@ -113,26 +111,55 @@
     </div>
 </div>
 <style>
+.jumbotron {
+    background-color: #007bff !important; /* Xanh dương chủ đạo */
+    color: white !important;
+}
+
+.list-group-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
 .image-container {
     width: 80px;
     height: 80px;
     overflow: hidden;
     border-radius: 8px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    border: 1px solid #ddd;
 }
 
 .total-box {
-    font-size: 10px;
+    background-color:rgb(255, 0, 0);
+    color:rgb(0, 4, 255);
+    font-size: 1.2rem;
     font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-success {
+    background-color:rgb(0, 255, 26);
+    border-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color:rgb(0, 13, 255);
 }
 
 .btn-outline-secondary {
-    padding: 5px 10px;
+    color:rgb(13, 0, 255);
+    border-color: #007bff;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #007bff;
+    color: white;
 }
 </style>
 
